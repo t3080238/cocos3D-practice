@@ -12,7 +12,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Cylinder-001",
+    "_name": "Coin",
     "_objFlags": 0,
     "_parent": null,
     "_children": [],
@@ -33,29 +33,29 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -3.088,
-      "y": 2.286,
-      "z": -2.565
+      "x": 0,
+      "y": 0,
+      "z": 0
     },
     "_lrot": {
       "__type__": "cc.Quat",
-      "x": -0.43849918921290326,
-      "y": 0.7181760585689084,
-      "z": 0.4072831572743198,
-      "w": 0.355052164841613
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
     },
     "_lscale": {
       "__type__": "cc.Vec3",
       "x": 1,
-      "y": 0.1,
+      "y": 0.07,
       "z": 1
     },
     "_layer": 1073741824,
     "_euler": {
       "__type__": "cc.Vec3",
-      "x": -72.439,
-      "y": 112.732,
-      "z": -19.915
+      "x": 0,
+      "y": 0,
+      "z": 0
     },
     "_id": ""
   },
@@ -101,13 +101,15 @@
   },
   {
     "__type__": "cc.CylinderColliderComponent",
-    "_name": "",
+    "_name": "Coin<CylinderColliderComponent>",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
-    "_material": null,
+    "_material": {
+      "__uuid__": "2297b748-a81d-49ff-aec5-48b660b7ad04"
+    },
     "_isTrigger": false,
     "_center": {
       "__type__": "cc.Vec3",
@@ -122,13 +124,13 @@
   },
   {
     "__type__": "cc.RigidBodyComponent",
-    "_name": "",
+    "_name": "Coin<RigidBodyComponent>",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
-    "_mass": 1,
+    "_mass": 10,
     "_linearDamping": 0.1,
     "_angularDamping": 0.1,
     "_fixedRotation": false,

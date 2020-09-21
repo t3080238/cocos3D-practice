@@ -130,9 +130,9 @@
       "__id__": 1
     },
     "_enabled": true,
-    "_mass": 10,
-    "_linearDamping": 0.1,
-    "_angularDamping": 0.1,
+    "_mass": 100,
+    "_linearDamping": 0,
+    "_angularDamping": 0.5,
     "_fixedRotation": false,
     "_isKinematic": false,
     "_useGravity": true,

@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Prefab, RigidBodyComponent, systemEvent, SystemEvent, EventMouse, Vec3, v3, instantiate } from 'cc';
+import { _decorator, Component, Node, Prefab, RigidBodyComponent, systemEvent, SystemEvent, EventMouse, Vec3, v3, instantiate, PhysicsSystem } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('CoinControl')
@@ -14,6 +14,7 @@ export class CoinControl extends Component {
 
 
     onLoad() {
+        PhysicsSystem.instance.allowSleep = false;
         this.setInputActive(true)
     }
 
@@ -25,10 +26,10 @@ export class CoinControl extends Component {
         }
 
         setInterval(() => {
-            if (this.coinList.length > 100) return;
+            if (this.coinList.length > 50) return;
             let z = Math.random() * 9 - 4.5;
             this.dropCoin(v3(-3.5, 1.5, z));
-        }, 5000)
+        }, 3000)
     }
 
     public setInputActive(active: boolean) {
@@ -59,7 +60,6 @@ export class CoinControl extends Component {
 
     update(deltaTime: number) {
         const rigidBody = this.pump.getComponent(RigidBodyComponent);
-        console.log(rigidBody.isSleeping);
 
         this.coinList.forEach((coin, i) => {
             if (coin.position.y < -10) {
@@ -67,10 +67,10 @@ export class CoinControl extends Component {
                 this.node.removeChild(coin);
                 coin.destroy();
             }
-            if (coin.position.x < -0.3) {
-                const rigidBody = coin.getComponent(RigidBodyComponent);
-                rigidBody.wakeUp();
-            }
+            // if (coin.position.x < -0.3) {
+            //     const rigidBody = coin.getComponent(RigidBodyComponent);
+            //     rigidBody.wakeUp();
+            // }
 
         })
     }

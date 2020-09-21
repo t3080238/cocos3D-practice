@@ -22,7 +22,7 @@
           "value": true
         },
         "Tween": {
-          "value": true
+          "value": false
         },
         "UI": {
           "value": true
@@ -43,7 +43,6 @@
         "physics-cannon",
         "physics-framework",
         "audio",
-        "tween",
         "terrain"
       ]
     }

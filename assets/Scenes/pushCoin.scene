@@ -465,8 +465,8 @@
       "__id__": 12
     },
     "_enabled": true,
-    "_mass": 10,
-    "_linearDamping": 0.1,
+    "_mass": 0,
+    "_linearDamping": 0,
     "_angularDamping": 0.1,
     "_fixedRotation": true,
     "_isKinematic": true,
@@ -530,7 +530,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -1.5,
+      "x": -2.5,
       "y": 0,
       "z": 0
     },
@@ -543,7 +543,7 @@
     },
     "_lscale": {
       "__type__": "cc.Vec3",
-      "x": 0.7,
+      "x": 0.5,
       "y": 1,
       "z": 1
     },
@@ -833,7 +833,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 5,
-      "y": -0.5,
+      "y": -5.5,
       "z": 0
     },
     "_lrot": {
@@ -988,8 +988,8 @@
     "_mass": 1,
     "_linearDamping": 0.1,
     "_angularDamping": 0.1,
-    "_fixedRotation": false,
-    "_isKinematic": false,
+    "_fixedRotation": true,
+    "_isKinematic": true,
     "_useGravity": false,
     "_linearFactor": {
       "__type__": "cc.Vec3",
@@ -1013,7 +1013,9 @@
       "__id__": 18
     },
     "_enabled": true,
-    "_material": null,
+    "_material": {
+      "__uuid__": "d3d49e6b-f12a-454c-b953-035b167ad18f"
+    },
     "_isTrigger": false,
     "_center": {
       "__type__": "cc.Vec3",

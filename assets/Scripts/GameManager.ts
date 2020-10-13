@@ -1,5 +1,5 @@
 import { _decorator, Component, Prefab, instantiate, Node, CCInteger, v3, LabelComponent } from "cc";
-import { PlayerController } from '../Scripts/PlayerController'
+import { PlayerController } from './PlayerController'
 const { ccclass, property } = _decorator;
 
 enum BlockType {
@@ -29,9 +29,6 @@ export class GameManager extends Component {
     private _curState: GameState = GameState.GS_INIT;
     private _road: number[] = [];
 
-    // start() {
-    //     this.generateRoad();
-    // }
     start() {
         this.curState = GameState.GS_INIT;
         this.playerCtrl.node.on('JumpEnd', this.onPlayerJumpEnd, this);

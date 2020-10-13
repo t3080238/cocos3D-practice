@@ -60,8 +60,8 @@
     "_id": ""
   },
   {
-    "__type__": "cc.ModelComponent",
-    "_name": "Cylinder<ModelComponent>",
+    "__type__": "cc.MeshRenderer",
+    "_name": "Cylinder<MeshRenderer>",
     "_objFlags": 0,
     "node": {
       "__id__": 1
@@ -80,6 +80,7 @@
       "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@8abdc"
     },
     "_shadowCastingMode": 0,
+    "_shadowReceivingMode": 1,
     "_enableMorph": true,
     "_id": ""
   },
@@ -100,8 +101,8 @@
     "_lightmapSize": 64
   },
   {
-    "__type__": "cc.CylinderColliderComponent",
-    "_name": "Coin<CylinderColliderComponent>",
+    "__type__": "cc.CylinderCollider",
+    "_name": "Coin<CylinderCollider>",
     "_objFlags": 0,
     "node": {
       "__id__": 1
@@ -123,16 +124,18 @@
     "_id": ""
   },
   {
-    "__type__": "cc.RigidBodyComponent",
-    "_name": "Coin<RigidBodyComponent>",
+    "__type__": "cc.RigidBody",
+    "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
-    "_mass": 100,
-    "_linearDamping": 0,
-    "_angularDamping": 0.5,
+    "_group": 1,
+    "_mass": 1,
+    "_allowSleep": true,
+    "_linearDamping": 0.1,
+    "_angularDamping": 0.1,
     "_fixedRotation": false,
     "_isKinematic": false,
     "_useGravity": true,

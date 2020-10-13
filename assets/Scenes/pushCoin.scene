@@ -87,7 +87,7 @@
     "_id": "c0y6F5f+pAvI805TdmxIjx"
   },
   {
-    "__type__": "cc.DirectionalLightComponent",
+    "__type__": "cc.DirectionalLight",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -132,16 +132,16 @@
     "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 10.326348516649855,
-      "y": 4.999578176986882,
-      "z": 0.1498975646018794
+      "x": 7.668273934790289,
+      "y": 10.279872525836646,
+      "z": -0.30434952494691236
     },
     "_lrot": {
       "__type__": "cc.Quat",
-      "x": 0.18310310085235293,
-      "y": -0.6795549255441533,
-      "z": -0.18113832116581144,
-      "w": -0.6869259539659975
+      "x": -0.2643572097504979,
+      "y": 0.6573523044937086,
+      "z": 0.2658298474977329,
+      "w": 0.6537107201270862
     },
     "_lscale": {
       "__type__": "cc.Vec3",
@@ -152,14 +152,14 @@
     "_layer": 1073741824,
     "_euler": {
       "__type__": "cc.Vec3",
-      "x": -29.850817906649223,
-      "y": 89.38187979140532,
-      "z": -1.5902773407317584e-15
+      "x": -44.03630299915178,
+      "y": 90.31828657274868,
+      "z": -3.1805546814635168e-15
     },
     "_id": "c9DMICJLFO5IeO07EPon7U"
   },
   {
-    "__type__": "cc.CameraComponent",
+    "__type__": "cc.Camera",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -248,8 +248,8 @@
     "_id": "f5pdi0y95PyI6j5udjk0SL"
   },
   {
-    "__type__": "cc.ModelComponent",
-    "_name": "Cube<ModelComponent>",
+    "__type__": "cc.MeshRenderer",
+    "_name": "Cube<MeshRenderer>",
     "_objFlags": 0,
     "node": {
       "__id__": 7
@@ -268,6 +268,7 @@
       "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@a804a"
     },
     "_shadowCastingMode": 0,
+    "_shadowReceivingMode": 1,
     "_enableMorph": true,
     "_id": "4dHABAUNBFkYGPdIbj0w6M"
   },
@@ -288,8 +289,8 @@
     "_lightmapSize": 64
   },
   {
-    "__type__": "cc.BoxColliderComponent",
-    "_name": "pump<BoxColliderComponent>",
+    "__type__": "cc.BoxCollider",
+    "_name": "pump<BoxCollider>",
     "_objFlags": 0,
     "node": {
       "__id__": 7
@@ -312,14 +313,16 @@
     "_id": "28rruTiJZHLrU07V3hftQm"
   },
   {
-    "__type__": "cc.RigidBodyComponent",
-    "_name": "pump<RigidBodyComponent>",
+    "__type__": "cc.RigidBody",
+    "_name": "pump<RigidBody>",
     "_objFlags": 0,
     "node": {
       "__id__": 7
     },
     "_enabled": false,
+    "_group": 1,
     "_mass": 10000,
+    "_allowSleep": true,
     "_linearDamping": 0.1,
     "_angularDamping": 0.1,
     "_fixedRotation": false,
@@ -392,8 +395,8 @@
     "_id": "eawbUWCZZCaorYiKPaFqBb"
   },
   {
-    "__type__": "cc.ModelComponent",
-    "_name": "Cube<ModelComponent>",
+    "__type__": "cc.MeshRenderer",
+    "_name": "Cube<MeshRenderer>",
     "_objFlags": 0,
     "node": {
       "__id__": 12
@@ -412,6 +415,7 @@
       "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@a804a"
     },
     "_shadowCastingMode": 0,
+    "_shadowReceivingMode": 1,
     "_enableMorph": true,
     "_id": "20yJ1PHpdC/KoHySUuaZQk"
   },
@@ -432,8 +436,8 @@
     "_lightmapSize": 64
   },
   {
-    "__type__": "cc.BoxColliderComponent",
-    "_name": "pump<BoxColliderComponent>",
+    "__type__": "cc.BoxCollider",
+    "_name": "pump<BoxCollider>",
     "_objFlags": 0,
     "node": {
       "__id__": 12
@@ -458,14 +462,16 @@
     "_id": "37QAx3E4FOk4YOyr7zw8np"
   },
   {
-    "__type__": "cc.RigidBodyComponent",
-    "_name": "pump<RigidBodyComponent>",
+    "__type__": "cc.RigidBody",
+    "_name": "pump<RigidBody>",
     "_objFlags": 0,
     "node": {
       "__id__": 12
     },
     "_enabled": true,
+    "_group": 1,
     "_mass": 0,
+    "_allowSleep": true,
     "_linearDamping": 0,
     "_angularDamping": 0.1,
     "_fixedRotation": true,
@@ -543,7 +549,7 @@
     },
     "_lscale": {
       "__type__": "cc.Vec3",
-      "x": 0.5,
+      "x": 1,
       "y": 1,
       "z": 1
     },
@@ -605,8 +611,8 @@
     "_id": "47uZ9NskRDEZGrQIZCxmnM"
   },
   {
-    "__type__": "cc.ModelComponent",
-    "_name": "Quad<ModelComponent>",
+    "__type__": "cc.MeshRenderer",
+    "_name": "Quad<MeshRenderer>",
     "_objFlags": 0,
     "node": {
       "__id__": 19
@@ -625,6 +631,7 @@
       "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@fc873"
     },
     "_shadowCastingMode": 0,
+    "_shadowReceivingMode": 1,
     "_enableMorph": true,
     "_id": "faORf75b9MKbQgiS0OM7Wu"
   },
@@ -645,7 +652,7 @@
     "_lightmapSize": 64
   },
   {
-    "__type__": "cc.BoxColliderComponent",
+    "__type__": "cc.BoxCollider",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -732,8 +739,8 @@
     "_id": "beOab278BJx4E4WvwwJoYY"
   },
   {
-    "__type__": "cc.ModelComponent",
-    "_name": "Quad<ModelComponent>",
+    "__type__": "cc.MeshRenderer",
+    "_name": "Quad<MeshRenderer>",
     "_objFlags": 0,
     "node": {
       "__id__": 24
@@ -752,6 +759,7 @@
       "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@fc873"
     },
     "_shadowCastingMode": 0,
+    "_shadowReceivingMode": 1,
     "_enableMorph": true,
     "_id": "faypG37rhPIaJOZDDu5klA"
   },
@@ -772,7 +780,7 @@
     "_lightmapSize": 64
   },
   {
-    "__type__": "cc.BoxColliderComponent",
+    "__type__": "cc.BoxCollider",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -859,8 +867,8 @@
     "_id": "ccuv8dT0ZFl5LsnXgVT9oj"
   },
   {
-    "__type__": "cc.ModelComponent",
-    "_name": "Quad<ModelComponent>",
+    "__type__": "cc.MeshRenderer",
+    "_name": "Quad<MeshRenderer>",
     "_objFlags": 0,
     "node": {
       "__id__": 29
@@ -879,6 +887,7 @@
       "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@fc873"
     },
     "_shadowCastingMode": 0,
+    "_shadowReceivingMode": 1,
     "_enableMorph": true,
     "_id": "2922v574JGKpvHZN5n250P"
   },
@@ -899,7 +908,7 @@
     "_lightmapSize": 64
   },
   {
-    "__type__": "cc.BoxColliderComponent",
+    "__type__": "cc.BoxCollider",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -938,8 +947,8 @@
     }
   },
   {
-    "__type__": "cc.ModelComponent",
-    "_name": "Plane<ModelComponent>",
+    "__type__": "cc.MeshRenderer",
+    "_name": "Plane<MeshRenderer>",
     "_objFlags": 0,
     "node": {
       "__id__": 18
@@ -958,6 +967,7 @@
       "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@2e76e"
     },
     "_shadowCastingMode": 0,
+    "_shadowReceivingMode": 1,
     "_enableMorph": true,
     "_id": "10NW24g3VE36q1I2aI6GDo"
   },
@@ -978,14 +988,16 @@
     "_lightmapSize": 64
   },
   {
-    "__type__": "cc.RigidBodyComponent",
-    "_name": "Plane<RigidBodyComponent>",
+    "__type__": "cc.RigidBody",
+    "_name": "Plane<RigidBody>",
     "_objFlags": 0,
     "node": {
       "__id__": 18
     },
     "_enabled": false,
-    "_mass": 1,
+    "_group": 1,
+    "_mass": 0,
+    "_allowSleep": true,
     "_linearDamping": 0.1,
     "_angularDamping": 0.1,
     "_fixedRotation": true,
@@ -1006,8 +1018,8 @@
     "_id": "95mr49VQZAZ5W4BuYzFX/2"
   },
   {
-    "__type__": "cc.BoxColliderComponent",
-    "_name": "Plane<BoxColliderComponent>",
+    "__type__": "cc.BoxCollider",
+    "_name": "Plane<BoxCollider>",
     "_objFlags": 0,
     "node": {
       "__id__": 18
@@ -1113,11 +1125,14 @@
     "ambient": {
       "__id__": 42
     },
-    "planarShadows": {
+    "shadows": {
       "__id__": 43
     },
     "_skybox": {
       "__id__": 44
+    },
+    "fog": {
+      "__id__": 45
     }
   },
   {
@@ -1139,7 +1154,8 @@
     }
   },
   {
-    "__type__": "cc.PlanarShadowInfo",
+    "__type__": "cc.ShadowsInfo",
+    "_type": 0,
     "_enabled": false,
     "_normal": {
       "__type__": "cc.Vec3",
@@ -1154,6 +1170,16 @@
       "g": 0,
       "b": 0,
       "a": 76
+    },
+    "_pcf": 0,
+    "_near": 1,
+    "_far": 30,
+    "_aspect": 1,
+    "_orthoSize": 5,
+    "_size": {
+      "__type__": "cc.Vec2",
+      "x": 512,
+      "y": 512
     }
   },
   {
@@ -1162,5 +1188,23 @@
     "_isRGBE": false,
     "_enabled": false,
     "_useIBL": false
+  },
+  {
+    "__type__": "cc.FogInfo",
+    "_type": 0,
+    "_fogColor": {
+      "__type__": "cc.Color",
+      "r": 200,
+      "g": 200,
+      "b": 200,
+      "a": 255
+    },
+    "_enabled": false,
+    "_fogDensity": 0.3,
+    "_fogStart": 0.5,
+    "_fogEnd": 300,
+    "_fogAtten": 5,
+    "_fogTop": 1.5,
+    "_fogRange": 1.2
   }
 ]

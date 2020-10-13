@@ -22,8 +22,6 @@ export class PlayerController extends Component {
     private _curMoveIndex = 0;
 
     start() {
-        // Your initialization goes here.
-        //systemEvent.on(SystemEvent.EventType.MOUSE_UP, this.onMouseUp, this);
     }
 
     reset() {
@@ -44,7 +42,6 @@ export class PlayerController extends Component {
         } else if (event.getButton() === 2) {
             this.jumpByStep(2);
         }
-
     }
 
     jumpByStep(step: number) {

@@ -81,8 +81,8 @@
     "_id": "c0y6F5f+pAvI805TdmxIjx"
   },
   {
-    "__type__": "cc.DirectionalLightComponent",
-    "_name": "Main Light<DirectionalLightComponent>",
+    "__type__": "cc.DirectionalLight",
+    "_name": "Main Light<DirectionalLight>",
     "_objFlags": 0,
     "node": {
       "__id__": 2
@@ -313,8 +313,8 @@
     "_id": "12B4vAUzdFJ5V8kT4ce42d"
   },
   {
-    "__type__": "cc.SkinningModelComponent",
-    "_name": "Helmet<SkinningModelComponent>",
+    "__type__": "cc.SkinnedMeshRenderer",
+    "_name": "Helmet<SkinnedMeshRenderer>",
     "_objFlags": 0,
     "node": {
       "__id__": 8
@@ -419,8 +419,8 @@
     "_id": "caO1e8xQFFmqKYax5NNAV5"
   },
   {
-    "__type__": "cc.SkinningModelComponent",
-    "_name": "Body<SkinningModelComponent>",
+    "__type__": "cc.SkinnedMeshRenderer",
+    "_name": "Body<SkinnedMeshRenderer>",
     "_objFlags": 0,
     "node": {
       "__id__": 12
@@ -3593,8 +3593,8 @@
     }
   },
   {
-    "__type__": "cc.SkeletalAnimationComponent",
-    "_name": "Cocos<SkeletalAnimationComponent>",
+    "__type__": "cc.SkeletalAnimation",
+    "_name": "Cocos<SkeletalAnimation>",
     "_objFlags": 0,
     "node": {
       "__id__": 7
@@ -3696,7 +3696,7 @@
     "_id": "d3sK/vQcVBbJTP9BE8+eHU"
   },
   {
-    "__type__": "cc.SpotLightComponent",
+    "__type__": "cc.SpotLight",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -3729,8 +3729,8 @@
     "_castShadow": false
   },
   {
-    "__type__": "cc.ModelComponent",
-    "_name": "Capsule<ModelComponent>",
+    "__type__": "cc.MeshRenderer",
+    "_name": "Capsule<MeshRenderer>",
     "_objFlags": 0,
     "node": {
       "__id__": 6
@@ -3769,8 +3769,8 @@
     "_lightmapSize": 64
   },
   {
-    "__type__": "cc.AnimationComponent",
-    "_name": "Body<AnimationComponent>",
+    "__type__": "cc.Animation",
+    "_name": "Body<Animation>",
     "_objFlags": 0,
     "node": {
       "__id__": 6
@@ -3832,7 +3832,7 @@
     "_id": "c9DMICJLFO5IeO07EPon7U"
   },
   {
-    "__type__": "cc.CameraComponent",
+    "__type__": "cc.Camera",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -4112,7 +4112,7 @@
     "_id": "6686dQJRBKJofD6qLzEQq6"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -4133,7 +4133,7 @@
     "_id": "81OXXH9XhMUKS/3sfx5QvH"
   },
   {
-    "__type__": "cc.LabelComponent",
+    "__type__": "cc.Label",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -4169,8 +4169,8 @@
     "_id": "c3HzAY+v5A5bRQqpDPCfAn"
   },
   {
-    "__type__": "cc.UITransformComponent",
-    "_name": "Canvas<UITransformComponent>",
+    "__type__": "cc.UITransform",
+    "_name": "Canvas<UITransform>",
     "_objFlags": 0,
     "node": {
       "__id__": 134
@@ -4190,8 +4190,8 @@
     "_id": "76bCarYXZPv4KBh4YI5rzp"
   },
   {
-    "__type__": "cc.CanvasComponent",
-    "_name": "Canvas<CanvasComponent>",
+    "__type__": "cc.Canvas",
+    "_name": "Canvas<Canvas>",
     "_objFlags": 0,
     "node": {
       "__id__": 134
@@ -4257,8 +4257,8 @@
     "_id": "f8Bvj6yRBDQYIlfYvVHVUb"
   },
   {
-    "__type__": "cc.UITransformComponent",
-    "_name": "BG<UITransformComponent>",
+    "__type__": "cc.UITransform",
+    "_name": "BG<UITransform>",
     "_objFlags": 0,
     "node": {
       "__id__": 140
@@ -4278,8 +4278,8 @@
     "_id": "1ecnQpCLBCM4r0p14h1DB6"
   },
   {
-    "__type__": "cc.SpriteComponent",
-    "_name": "BG<SpriteComponent>",
+    "__type__": "cc.Sprite",
+    "_name": "BG<Sprite>",
     "_objFlags": 0,
     "node": {
       "__id__": 140
@@ -4413,7 +4413,7 @@
     "_id": "266IXJewZPYosZk90ZE4Cf"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -4434,7 +4434,7 @@
     "_id": "22kuqctrpBzZGSHUiwwm16"
   },
   {
-    "__type__": "cc.LabelComponent",
+    "__type__": "cc.Label",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -4470,7 +4470,7 @@
     "_id": "48MzrnjJpPEKn+03UTzOoc"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -4491,7 +4491,7 @@
     "_id": "f4KuJH/XxDC5ETRJu+Nb5h"
   },
   {
-    "__type__": "cc.SpriteComponent",
+    "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -4527,7 +4527,7 @@
     "_id": "7f/AgImlJP/a1ld3yiMHqS"
   },
   {
-    "__type__": "cc.ButtonComponent",
+    "__type__": "cc.Button",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -4645,7 +4645,7 @@
     "_id": "d3t8YORoxI851CNv8sZbBe"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -4666,7 +4666,7 @@
     "_id": "6bsdljPjBF6bBGEibdgs/c"
   },
   {
-    "__type__": "cc.LabelComponent",
+    "__type__": "cc.Label",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -4748,7 +4748,7 @@
     "_id": "38COCoA/lPV4On6dfIQPxo"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -4769,7 +4769,7 @@
     "_id": "43dm5j+YNLUrWSucNsRV8l"
   },
   {
-    "__type__": "cc.LabelComponent",
+    "__type__": "cc.Label",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -4851,7 +4851,7 @@
     "_id": "843wl5MxBGoIMHH6FYy+PB"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -4872,7 +4872,7 @@
     "_id": "48ygEfzdBKVpNEoUW5zUes"
   },
   {
-    "__type__": "cc.LabelComponent",
+    "__type__": "cc.Label",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -4908,7 +4908,7 @@
     "_id": "50TBFVzvZI5rJnIcS76F7D"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -4933,11 +4933,11 @@
     "ambient": {
       "__id__": 162
     },
-    "planarShadows": {
-      "__id__": 163
-    },
     "_skybox": {
       "__id__": 164
+    },
+    "shadows": {
+      "__id__": 163
     }
   },
   {
@@ -4959,7 +4959,7 @@
     }
   },
   {
-    "__type__": "cc.PlanarShadowInfo",
+    "__type__": "cc.ShadowsInfo",
     "_enabled": true,
     "_normal": {
       "__type__": "cc.Vec3",

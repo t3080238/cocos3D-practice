@@ -1,5 +1,5 @@
 {
-  "ver": "2.0.14",
+  "ver": "4.0.1",
   "importer": "typescript",
   "imported": true,
   "uuid": "9d9bc6b7-6897-4ae4-85e9-f6c8f3ca42e4",
@@ -10,6 +10,7 @@
   "subMetas": {},
   "userData": {
     "importAsPlugin": false,
-    "moduleId": "project:///assets/Scripts/CoinControl.js"
+    "moduleId": "project:///assets/Scripts/CoinControl.js",
+    "importerSettings": 0
   }
 }

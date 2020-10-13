@@ -15,7 +15,7 @@
           "value": true
         },
         "Physics": {
-          "option": "0",
+          "option": "2",
           "value": true
         },
         "Terrain": {
@@ -40,7 +40,7 @@
         "gfx-webgl2",
         "ui",
         "particle",
-        "physics-cannon",
+        "physics-ammo",
         "physics-framework",
         "audio",
         "terrain"

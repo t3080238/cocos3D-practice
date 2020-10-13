@@ -1,5 +1,5 @@
 {
-  "ver": "2.0.14",
+  "ver": "4.0.1",
   "importer": "typescript",
   "imported": true,
   "uuid": "ca65035a-b178-468d-8d1a-b31a00de0322",
@@ -10,6 +10,7 @@
   "subMetas": {},
   "userData": {
     "importAsPlugin": false,
-    "moduleId": "project:///assets/Scripts/GameManager.js"
+    "moduleId": "project:///assets/Scripts/GameManager.js",
+    "importerSettings": 0
   }
 }

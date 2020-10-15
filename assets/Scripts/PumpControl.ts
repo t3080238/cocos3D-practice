@@ -15,6 +15,13 @@ export class PumpControl extends Component {
     }
 
     update(deltaTime: number) {
+        /**HACK */
+        if (this.rigidBody.isKinematic) {
+            const impl = this.rigidBody.body.impl;
+            const t = impl['getWorldTransform']();
+            impl['getMotionState']()['setWorldTransform'](t);
+        }
+
         Vec3.add(this.node.position, this.node.position, v3(this.pushV * deltaTime, 0, 0));
         this.node.setPosition(this.node.position);
         // this.rigidBody.setLinearVelocity(v3(this.pushV * deltaTime, 0, 0));

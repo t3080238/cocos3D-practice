@@ -1,5 +1,5 @@
 import { _decorator, Component, Prefab, instantiate, Node, CCInteger, v3, LabelComponent } from "cc";
-import { PlayerController } from './PlayerController'
+import { PlayerController } from './playerController'
 const { ccclass, property } = _decorator;
 
 enum BlockType {

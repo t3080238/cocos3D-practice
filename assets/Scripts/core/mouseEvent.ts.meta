@@ -2,7 +2,7 @@
   "ver": "4.0.1",
   "importer": "typescript",
   "imported": true,
-  "uuid": "5bfa76d1-37e4-485c-927c-e38dc1a6777b",
+  "uuid": "ca7a919a-a49e-46f2-b6be-649ad2ad9e32",
   "files": [
     ".js",
     ".trans"
@@ -10,7 +10,7 @@
   "subMetas": {},
   "userData": {
     "importAsPlugin": false,
-    "moduleId": "project:///assets/Scripts/PumpControl.js",
+    "moduleId": "project:///assets/Scripts/core/mouseEvent.js",
     "importerSettings": 0
   }
 }

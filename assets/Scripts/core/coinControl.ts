@@ -15,47 +15,29 @@ export class CoinControl extends Component {
 
     onLoad() {
         PhysicsSystem.instance.allowSleep = false;
-        this.setInputActive(true)
     }
 
     start() {
         for (let i = 0; i < 20; i++) {
-            let z = Math.random() * 9 - 4.5;
-            let x = Math.random() * 7.5 - 3.5;
+            let x = Math.random() * 8 - 4;
+            let z = Math.random() * 4 + 5;
             this.dropCoin(v3(x, 1.5, z));
         }
 
         setInterval(() => {
-            if (this.coinList.length > 50) return;
-            let z = Math.random() * 9 - 4.5;
-            this.dropCoin(v3(-3.5, 1.5, z));
-        }, 3000)
+            let x = Math.random() * 8 - 4;
+            this.dropCoin(v3(x, 1.5, 3));
+        }, 5000)
     }
 
-    public setInputActive(active: boolean) {
-        if (active) {
-            systemEvent.on(SystemEvent.EventType.MOUSE_UP, this.onMouseUp, this);
-        } else {
-            systemEvent.off(SystemEvent.EventType.MOUSE_UP, this.onMouseUp, this);
-        }
-    }
-
-    private onMouseUp(event: EventMouse) {
-        if (event.getButton() === 0) {
-            console.log(event);
-        } else if (event.getButton() === 2) {
-            console.log(event);
-        }
-    }
-
-    private dropCoin(position: Vec3) {
+    public dropCoin(position: Vec3) {
         if (!position) return;
+        if (this.coinList.length > 50) return;
 
         let coin = instantiate(this.coinPrefab);
         coin.position.set(position)
         this.node.addChild(coin);
         this.coinList.push(coin);
-
     }
 
     update(deltaTime: number) {

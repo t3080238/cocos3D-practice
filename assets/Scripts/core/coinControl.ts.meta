@@ -2,7 +2,7 @@
   "ver": "4.0.1",
   "importer": "typescript",
   "imported": true,
-  "uuid": "53734f76-55da-4bba-a326-8f81f2176005",
+  "uuid": "9d9bc6b7-6897-4ae4-85e9-f6c8f3ca42e4",
   "files": [
     ".js",
     ".trans"
@@ -10,7 +10,7 @@
   "subMetas": {},
   "userData": {
     "importAsPlugin": false,
-    "moduleId": "project:///assets/Scripts/PlayerController.js",
+    "moduleId": "project:///assets/Scripts/core/coinControl.js",
     "importerSettings": 0
   }
 }

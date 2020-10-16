@@ -1,0 +1,6 @@
+我不是太明白你是怎么实现的，按照我的思路想要实现屏幕UI坐标转换为3D坐标，使用射线比较方便。
+- 使用 CameraComponent 的 screenPointToRay 函数来创建一条屏幕坐标的射线
+- 通过这条射线与3D空间中的面进行相交计算，得出相交点
+- 将要移动的物体的 worldPosition 设置即可实现
+
+https://forum.cocos.org/t/3d/91352

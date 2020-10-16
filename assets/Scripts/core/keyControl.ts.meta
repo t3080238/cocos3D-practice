@@ -2,7 +2,7 @@
   "ver": "4.0.1",
   "importer": "typescript",
   "imported": true,
-  "uuid": "ca65035a-b178-468d-8d1a-b31a00de0322",
+  "uuid": "13adf40b-3720-4dbc-822b-a373f5659451",
   "files": [
     ".js",
     ".trans"
@@ -10,7 +10,7 @@
   "subMetas": {},
   "userData": {
     "importAsPlugin": false,
-    "moduleId": "project:///assets/Scripts/GameManager.js",
+    "moduleId": "project:///assets/Scripts/core/keyControl.js",
     "importerSettings": 0
   }
 }

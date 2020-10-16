@@ -22,13 +22,13 @@ export class PumpControl extends Component {
             impl['getMotionState']()['setWorldTransform'](t);
         }
 
-        Vec3.add(this.node.position, this.node.position, v3(this.pushV * deltaTime, 0, 0));
+        Vec3.add(this.node.position, this.node.position, v3(0, 0, this.pushV * deltaTime));
         this.node.setPosition(this.node.position);
         // this.rigidBody.setLinearVelocity(v3(this.pushV * deltaTime, 0, 0));
 
         // this.rigidBody.setLinearVelocity(new Vec3(this.pushV * deltaTime, 0, 0));
 
-        if (this.node.position.x >= -3) this.pushV = -1;
-        if (this.node.position.x <= -7) this.pushV = 1;
+        if (this.node.position.z <= -3) this.pushV = 1;
+        if (this.node.position.z >= 1) this.pushV = -1;
     }
 }

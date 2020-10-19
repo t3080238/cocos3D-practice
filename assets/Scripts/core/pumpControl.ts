@@ -11,8 +11,7 @@ export class PumpControl extends Component {
 
     start() {
         // Your initialization goes here.
-        this.rigidBody = this.getComponent(RigidBodyComponent);
-
+        this.rigidBody = this.getComponent(RigidBodyComponent)
     }
 
     update(deltaTime: number) {
@@ -38,6 +37,5 @@ export class PumpControl extends Component {
         this.limitZ = this.limitZ < -3 ? -3 : this.limitZ;
         this.limitZ = this.limitZ > 7 ? 7 : this.limitZ;
         console.log('limitZ', this.limitZ);
-
     }
 }

@@ -11,7 +11,6 @@ export class MouseEvent extends Component {
     @property({ type: CoinControl })
     private coinControl: CoinControl = null;
 
-
     private ray: geometry.ray;
     /* class member could be defined like this */
     // dummy = '';
@@ -27,9 +26,6 @@ export class MouseEvent extends Component {
     }
 
     private onMouseUp(event) {
-        console.log(event);
-        console.log(event._x, event._y);
-
         if (event.getButton() === 0) {
         } else if (event.getButton() === 2) {
         }
@@ -47,7 +43,7 @@ export class MouseEvent extends Component {
                 const item = r[i];
 
                 if (item.collider.node === this.touchPlane) {
-                    this.coinControl.dropCoin(v3(item.hitPoint.x, 1.5, 3));
+                    this.coinControl.addCoin(v3(item.hitPoint.x, 1.5, 3));
                 }
             }
         }

@@ -1,11 +1,25 @@
 import { _decorator, Component, Node, Prefab, RigidBodyComponent, systemEvent, SystemEvent, EventMouse, Vec3, v3, instantiate, PhysicsSystem, Material, MeshRenderer } from 'cc';
 const { ccclass, property } = _decorator;
+import { UiControl } from './uiControl'
+import { RandCoin } from '../rand/randCoin'
 
 @ccclass('CoinControl')
 export class CoinControl extends Component {
+    private randCoin: RandCoin = null;
     private coinList: Node[] = [];
+    private isInit: boolean = true;
     private adjustMass: number = 1;
+    // 允許掉落硬幣數
+    private allowCoin: number = 0;
+    // 投入硬幣數
+    private throwCoin: number = 0;
+    // 贏得硬幣數
+    private winCoin: number = 0;
+    // 掉落外面硬幣數
+    private dropCoin: number = 0;
 
+    @property({ type: UiControl })
+    public uiControl: UiControl = null;
     @property({ type: Prefab })
     public coinPrefab: Prefab = null;
     @property({ type: Node })
@@ -15,25 +29,27 @@ export class CoinControl extends Component {
     @property({ type: Material })
     private coin2Material: Material = null;
 
-
     onLoad() {
         PhysicsSystem.instance.allowSleep = false;
+        this.randCoin = new RandCoin();
     }
 
     start() {
         for (let i = 0; i < 20; i++) {
             let x = Math.random() * 8 - 4;
             let z = Math.random() * 4 + 5;
-            this.dropCoin(v3(x, 1.5, z));
+            this.addCoin(v3(x, 1.5, z));
         }
 
-        setInterval(() => {
-            let x = Math.random() * 8 - 4;
-            this.dropCoin(v3(x, 1.5, 3));
-        }, 5000);
+        // setInterval(() => {
+        //     let x = Math.random() * 8 - 4;
+        //     this.dropCoin(v3(x, 1.5, 3));
+        // }, 5000);
+
+        this.isInit = false;
     }
 
-    public dropCoin(position: Vec3) {
+    public addCoin(position: Vec3) {
         if (!position) return;
         if (this.coinList.length > 100) return;
 
@@ -43,6 +59,15 @@ export class CoinControl extends Component {
         coin.position.set(position)
         this.node.addChild(coin);
         this.coinList.push(coin);
+
+        this.uiControl.setTotalCoin(this.coinList.length);
+
+        if (this.isInit) return;
+        this.throwCoin++;
+        this.uiControl.setThrowCoin(this.throwCoin);
+
+        this.allowCoin += this.randCoin.addCoin();
+        this.uiControl.setAllowCoin(this.allowCoin);
     }
 
     update(deltaTime: number) {
@@ -52,13 +77,25 @@ export class CoinControl extends Component {
             if (coin.position.y < -10) {
                 this.coinList.splice(i, 1);
                 this.node.removeChild(coin);
+
+                if (coin.position.z > 9.9) {
+                    this.winCoin++;
+                    this.uiControl.setWinCoin(this.winCoin);
+                    this.allowCoin--
+                    this.uiControl.setAllowCoin(this.allowCoin);
+                } else {
+                    this.dropCoin++;
+                    this.uiControl.setWinCoin(this.dropCoin);
+                }
+
                 coin.destroy();
             }
+
+            this.uiControl.setTotalCoin(this.coinList.length);
             // if (coin.position.x < -0.3) {
             //     const rigidBody = coin.getComponent(RigidBodyComponent);
             //     rigidBody.wakeUp();
             // }
-
         })
     }
 

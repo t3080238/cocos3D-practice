@@ -45,12 +45,8 @@ export class MouseEvent extends Component {
             const r = PhysicsSystem.instance.raycastResults;
             for (let i = 0; i < r.length; i++) {
                 const item = r[i];
-                console.log(item.collider.node);
-                console.log(this.touchPlane);
 
                 if (item.collider.node === this.touchPlane) {
-                    console.log(item.hitPoint.x);
-                    console.log(this.coinControl);
                     this.coinControl.dropCoin(v3(item.hitPoint.x, 1.5, 3));
                 }
             }

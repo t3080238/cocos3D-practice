@@ -1,8 +1,15 @@
 import { _decorator, Component, Node, systemEvent, SystemEvent } from 'cc';
+import { CoinControl } from './coinControl';
+import { PumpControl } from './pumpControl';
 const { ccclass, property } = _decorator;
 
 @ccclass('KeyControl')
 export class KeyControl extends Component {
+    @property({ type: CoinControl })
+    private coinControl: CoinControl = null;
+    @property({ type: PumpControl })
+    private pumpControl: PumpControl = null;
+
     start() {
         // Your initialization goes here.
         systemEvent.on(SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
@@ -36,12 +43,19 @@ export class KeyControl extends Component {
                 break;
             // Z鍵
             case 90:
+                this.coinControl.setMass(-5);
                 break;
             // X鍵
             case 88:
+                this.coinControl.setMass(5);
                 break;
             // A鍵
             case 65:
+                this.pumpControl.setLimitZ(-0.5);
+                break;
+            // S鍵
+            case 83:
+                this.pumpControl.setLimitZ(0.5);
                 break;
             default:
                 break;

@@ -1,9 +1,10 @@
-import { _decorator, Component, Node, Prefab, RigidBodyComponent, systemEvent, SystemEvent, EventMouse, Vec3, v3, instantiate, PhysicsSystem } from 'cc';
+import { _decorator, Component, Node, Prefab, RigidBodyComponent, systemEvent, SystemEvent, EventMouse, Vec3, v3, instantiate, PhysicsSystem, Material, MeshRenderer } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('CoinControl')
 export class CoinControl extends Component {
     private coinList: Node[] = [];
+    private adjustMass: number = 1;
 
     @property({ type: Prefab })
     public coinPrefab: Prefab = null;
@@ -11,6 +12,8 @@ export class CoinControl extends Component {
     public plane: Node = null;
     @property({ type: Node })
     public pump: Node = null;
+    @property({ type: Material })
+    private coin2Material: Material = null;
 
 
     onLoad() {
@@ -27,7 +30,7 @@ export class CoinControl extends Component {
         setInterval(() => {
             let x = Math.random() * 8 - 4;
             this.dropCoin(v3(x, 1.5, 3));
-        }, 5000)
+        }, 5000);
     }
 
     public dropCoin(position: Vec3) {
@@ -56,6 +59,21 @@ export class CoinControl extends Component {
             //     rigidBody.wakeUp();
             // }
 
+        })
+    }
+
+    public setMass(mass: number) {
+        this.adjustMass += mass;
+        this.adjustMass = this.adjustMass < 1 ? 1 : this.adjustMass;
+        console.log('adjustMass', this.adjustMass);
+
+        this.coinList.forEach((coin) => {
+            if (coin.position.z > 8.5) {
+                coin.getComponent(RigidBodyComponent).mass = this.adjustMass;
+                // coin.material = this.setMaterial({ diffuseColor: new BABYLON.Color3(1, 0.8, 0.5) });
+                // coin.getComponent(MeshRenderer).material = this.coin2Material;
+                coin.getComponent(MeshRenderer).setMaterial(this.coin2Material, 0);
+            }
         })
     }
 }

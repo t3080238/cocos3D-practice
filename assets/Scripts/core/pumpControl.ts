@@ -6,8 +6,9 @@ export class PumpControl extends Component {
     /* class member could be defined like this */
     // dummy = '';
     private rigidBody: RigidBody
-
+    private limitZ: number = 1;
     private pushV = 1;
+
     start() {
         // Your initialization goes here.
         this.rigidBody = this.getComponent(RigidBodyComponent);
@@ -29,6 +30,14 @@ export class PumpControl extends Component {
         // this.rigidBody.setLinearVelocity(new Vec3(this.pushV * deltaTime, 0, 0));
 
         if (this.node.position.z <= -3) this.pushV = 1;
-        if (this.node.position.z >= 1) this.pushV = -1;
+        if (this.node.position.z >= this.limitZ) this.pushV = -1;
+    }
+
+    public setLimitZ(num: number) {
+        this.limitZ += num;
+        this.limitZ = this.limitZ < -3 ? -3 : this.limitZ;
+        this.limitZ = this.limitZ > 7 ? 7 : this.limitZ;
+        console.log('limitZ', this.limitZ);
+
     }
 }

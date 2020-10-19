@@ -32,8 +32,10 @@ export class CoinControl extends Component {
 
     public dropCoin(position: Vec3) {
         if (!position) return;
-        if (this.coinList.length > 50) return;
+        if (this.coinList.length > 100) return;
 
+        position.x = position.x > 4 ? 4 : position.x;
+        position.x = position.x < -4 ? -4 : position.x;
         let coin = instantiate(this.coinPrefab);
         coin.position.set(position)
         this.node.addChild(coin);

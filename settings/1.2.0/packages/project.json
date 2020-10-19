@@ -18,6 +18,22 @@
     "defaultMaterial": {
       "friction": 0.7
     },
-    "allowSleep": false
-  }
+    "allowSleep": false,
+    "collisionGroups": [
+      {
+        "index": 1,
+        "name": "mouseEvent"
+      }
+    ],
+    "collisionMatrix": {
+      "0": 1,
+      "1": 2
+    }
+  },
+  "layer": [
+    {
+      "name": "\\",
+      "value": 1
+    }
+  ]
 }

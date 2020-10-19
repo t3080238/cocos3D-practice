@@ -7,8 +7,9 @@ import { RandCoin } from '../rand/randCoin'
 export class CoinControl extends Component {
     private randCoin: RandCoin = null;
     private coinList: Node[] = [];
-    private isInit: boolean = true;
     private adjustMass: number = 1;
+    // 場上硬幣數
+    private totalCoin: number = 0;
     // 允許掉落硬幣數
     private allowCoin: number = 0;
     // 投入硬幣數
@@ -28,6 +29,8 @@ export class CoinControl extends Component {
     public pump: Node = null;
     @property({ type: Material })
     private coin2Material: Material = null;
+    @property({ type: [Node] })
+    public sideWall: Node[] = [];
 
     onLoad() {
         PhysicsSystem.instance.allowSleep = false;
@@ -38,18 +41,16 @@ export class CoinControl extends Component {
         for (let i = 0; i < 20; i++) {
             let x = Math.random() * 8 - 4;
             let z = Math.random() * 4 + 5;
-            this.addCoin(v3(x, 1.5, z));
+            this.addCoin(v3(x, 1.5, z), true);
         }
 
         // setInterval(() => {
         //     let x = Math.random() * 8 - 4;
         //     this.dropCoin(v3(x, 1.5, 3));
         // }, 5000);
-
-        this.isInit = false;
     }
 
-    public addCoin(position: Vec3) {
+    public addCoin(position: Vec3, systemAdd: boolean = false) {
         if (!position) return;
         if (this.coinList.length > 100) return;
 
@@ -60,9 +61,10 @@ export class CoinControl extends Component {
         this.node.addChild(coin);
         this.coinList.push(coin);
 
-        this.uiControl.setTotalCoin(this.coinList.length);
+        this.totalCoin++
+        this.uiControl.setTotalCoin(this.totalCoin);
 
-        if (this.isInit) return;
+        if (systemAdd) return;
         this.throwCoin++;
         this.uiControl.setThrowCoin(this.throwCoin);
 
@@ -74,10 +76,7 @@ export class CoinControl extends Component {
         const rigidBody = this.pump.getComponent(RigidBodyComponent);
 
         this.coinList.forEach((coin, i) => {
-            if (coin.position.y < -10) {
-                this.coinList.splice(i, 1);
-                this.node.removeChild(coin);
-
+            if (coin.position.y < -0.1 && !coin['isDrop']) {
                 if (coin.position.z > 9.9) {
                     this.winCoin++;
                     this.uiControl.setWinCoin(this.winCoin);
@@ -87,11 +86,18 @@ export class CoinControl extends Component {
                     this.dropCoin++;
                     this.uiControl.setWinCoin(this.dropCoin);
                 }
+                coin['isDrop'] = true;
+                this.totalCoin--;
+                this.uiControl.setTotalCoin(this.totalCoin);
+            }
+
+            if (coin.position.y < -10 && coin['isDrop']) {
+                this.coinList.splice(i, 1);
+                this.node.removeChild(coin);
 
                 coin.destroy();
             }
 
-            this.uiControl.setTotalCoin(this.coinList.length);
             // if (coin.position.x < -0.3) {
             //     const rigidBody = coin.getComponent(RigidBodyComponent);
             //     rigidBody.wakeUp();
@@ -113,4 +119,30 @@ export class CoinControl extends Component {
             }
         })
     }
+
+    // 檢查是否要
+    // 1. 掉落更多金幣
+    // 2. 推台往前推更多
+    // 3. 側邊閘門開啟
+    // 4. 增加硬幣質量
+    public checkCoinStatus() {
+
+    }
+
+    private addMoreCoin(number) {
+        let alreadyAdd = 0;
+        let interval = setInterval(() => {
+            if (alreadyAdd >= number) {
+                clearInterval(interval);
+                return;
+            }
+
+            alreadyAdd++;
+            let x = Math.random() * 8 - 4;
+            let z = Math.random() * 4 + 5;
+            this.addCoin(v3(x, 1.5, z), true);
+        }, 200);
+    }
+
+    private 
 }
